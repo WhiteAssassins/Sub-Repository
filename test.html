@@ -1,0 +1,103 @@
+    
+  <html>
+    <head>
+      <link href="css/material-icons.css" rel="stylesheet" type="text/css">
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  <title>HardSubs</title>
+	  <link rel="icon" href="img/favicon.png" sizes="32x32">
+	  <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+	  <script>
+	  $(document).ready(function(){
+		$('.tooltipped').tooltip({delay: 50});
+	  });
+	  </script>
+
+ <!--SCRIPT + CONTADOR DESCARGAS-->
+	  <script language="javascript" type="text/javascript">
+		var RequestObject = false;
+		var Archivo = 'http://10.18.0.13/hardsubs/upload.php';
+		if (window.XMLHttpRequest) RequestObject = new XMLHttpRequest();
+		if (window.ActiveXObject) RequestObject = new ActiveXObject("Microsoft.XMLHTTP");
+		function ReqChange() { 
+		if (RequestObject.readyState==4) {
+		if (RequestObject.responseText.indexOf('invalid') == -1) {
+		} else { 
+		}
+		} 
+		}
+		function llamadaAjax() {
+        RequestObject.open("GET", Archivo, true);
+		RequestObject.onreadystatechange = ReqChange; 
+		RequestObject.send(null);
+		}
+	  </script>
+	  <!--/SCRIPT + CONTADOR DESCARGAS-->
+	  
+	<style>  
+	  #particles-js {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    z-index: 0;
+	background-color: #2bbbad;
+	}
+	</style>
+	  
+    </head>
+
+    <body>
+	<div id="particles-js" class="center-align"></div>
+	<div>
+	  <div class="row">
+      <div class="center-align"><a href="http://10.18.0.13/hardsubs" style="color: white !important"><h2 class="waves-effect" 
+	  style="color: white; margin-top: -120px"><b>HARDSUBS</b><hr style="margin-top: -1px; width: 70%"></a></h2></div>
+	  <div class="right-align"><a class="tooltipped hoverable btn-floating btn waves-effect waves-light red" 
+	  data-position="left" data-delay="50" data-tooltip="Subs Totales: 2706 | Descargas: 29153" 
+	  style="color: rgb(31, 144, 133); background-color: white !important;margin-top: -50px; margin-right:10px"><i 
+	  style="color: rgb(31, 144, 133)"class="fa fa-info"></i></a></div>
+	  </p>
+	  </div>
+	  </div>
+      </div>
+	  <div class="container">
+	  <div class="row">
+	  <div class="col s6 offset-s3">
+
+	  <!-- FORM BUSCADOR -->
+
+      <form action="/hardsubs/index.php" method="post" enctype="multipart/form-data" name="inscripcion">
+		<div class="input-field col s10">
+          <input id="last_name" type="text" class="validate" name="buscar">
+          <label for="last_name">Inserte Nombre</label>
+        </div>
+		<div class="col s2">
+		<button class="btn waves-effect waves-light" type="submit" name="action" style="margin-top: 15px">
+		  <i class="fa fa-search"></i>
+		</button>
+		</div>
+	  </form>
+	
+	  <!-- /FORM BUSCADOR -->
+	
+	  </div>
+	  </div>
+	  </div>
+	  <div class="fixed-action-btn horizontal">
+		<a href="http://10.18.0.13/hardsubs/add.php" class="tooltipped hoverable btn-floating btn-large waves-effect waves-light red" data-position="left" 
+		data-delay="50" data-tooltip="Añadir Subtítulo" style="background-color: rgb(31, 144, 133) !important"><i class="fa fa-plus-circle"></i></a>
+	  </div>
+
+      <div class="container">
+  
+   
+	  </div>
+	  
+	  <script type="text/javascript" src="js/particles.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+	  </body>
+	  
+      </html>
+        
