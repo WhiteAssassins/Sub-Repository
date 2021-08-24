@@ -4,8 +4,6 @@ Subtitle Repository
 # Requerimientos
 * Mysql Server
 * Apache Server 
-* Rust Server
-* Oxide Rust
 # Instalación
 * 1 Instale su servidor Mysql y Apache les Recomiendo Xampp https://www.apachefriends.org/es/download.html
 * 2 Cree una base de datos en su mysql llamada devdocs
