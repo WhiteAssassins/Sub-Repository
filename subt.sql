@@ -30,4 +30,12 @@ CREATE TABLE `upload` (
   UNIQUE KEY `upload_nombre_unique` (`nombre`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+DROP TABLE IF EXISTS `subtitle_requests`;
+CREATE TABLE `subtitle_requests` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(190) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 SET foreign_key_checks = 1;

@@ -1,6 +1,7 @@
 <?php
 include("config.php");
 
+$activePage = "subir";
 $messages = array();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["archivo"])) {
@@ -60,96 +61,50 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["archivo"])) {
     <title><?php echo e($title); ?> - Subir</title>
     <link href="css/material-icons.css" rel="stylesheet" type="text/css">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection">
+    <link type="text/css" rel="stylesheet" href="css/sub-repository.css" media="screen,projection">
     <link rel="icon" href="img/favicon.png" sizes="32x32">
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/sub-repository.js"></script>
     <script>
       $(document).ready(function(){
-        $('.tooltipped').tooltip({delay: 50});
         <?php foreach ($messages as $message): ?>
         Materialize.toast(<?php echo js_value($message); ?>, 5000, 'rounded');
         <?php endforeach; ?>
       });
     </script>
-    <style>
-      #particles-js {
-        position: relative;
-        height: 300px;
-        width: 100%;
-        z-index: 0;
-        background: url(img/bg.jpg);
-      }
-
-      .btn {
-        border-radius: 35px;
-      }
-
-      html,
-      body {
-        min-height: 100vh;
-      }
-
-      body {
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-      }
-
-      .site-content {
-        flex: 1 0 auto;
-      }
-
-      .upload-panel {
-        margin-top: 0;
-      }
-
-      .upload-panel .row {
-        margin-bottom: 0;
-      }
-
-      .upload-panel .input-field {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-    </style>
   </head>
   <body>
+    <?php include("nav.php"); ?>
+
     <main class="site-content">
-      <nav>
-        <div class="nav-wrapper blue">
-          <a style="padding-left: 30px; font-family: 'Roboto';" href=".">Home</a>
-        </div>
-      </nav>
-
-      <div id="particles-js" class="center-align"></div>
-      <?php include("nav.php"); ?>
-
-      <div class="container upload-panel">
-        <div class="row">
-          <div class="col s12 m10 offset-m1">
-            <form action="<?php echo e($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data" name="subida">
-              <div class="file-field input-field col s10">
-                <div class="btn waves-effect waves-light blue">
-                  examinar
-                  <input type="file" name="archivo[]" multiple accept=".srt">
-                </div>
-                <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text">
-                </div>
-              </div>
-              <button class="btn waves-effect waves-light blue" type="submit" name="action" style="margin-top: 15px">
-                <i class="fa fa-cloud-upload"></i>
-              </button>
-            </form>
+      <section class="sr-container hero">
+        <div class="hero-content">
+          <div class="hero-title-row">
+            <span class="hero-mark"><i class="fa fa-upload"></i></span>
+            <h1>Subir subtitulo</h1>
+          </div>
+          <p>Agrega archivos .srt al repositorio.</p>
+          <div class="hero-actions">
+            <a href="<?php echo e(site_url()); ?>" class="primary-button"><i class="fa fa-search"></i> Buscar subtitulos</a>
+            <a href="#subir" class="outline-button"><i class="fa fa-upload"></i> Seleccionar archivo</a>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="fixed-action-btn horizontal">
-        <a href="index.php" class="tooltipped hoverable btn-floating btn-large waves-effect waves-light red"
-          data-position="left" data-delay="50" data-tooltip="Buscar Subtitulo"><i class="fa fa-search"></i></a>
-      </div>
+      <section id="subir" class="upload-card">
+        <form class="upload-form" action="<?php echo e($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data" name="subida">
+          <label class="file-input-wrap">
+            <i class="fa fa-file-text-o"></i>
+            <input type="file" name="archivo[]" multiple accept=".srt">
+            <input class="file-path" type="text" placeholder="Selecciona uno o varios archivos .srt">
+          </label>
+          <button class="primary-button" type="submit"><i class="fa fa-cloud-upload"></i> Subir</button>
+        </form>
+      </section>
     </main>
+
+    <button class="back-top" data-back-top aria-label="Volver arriba"><i class="fa fa-arrow-up"></i></button>
 
     <?php include("footer.php"); ?>
   </body>

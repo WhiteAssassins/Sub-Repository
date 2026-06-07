@@ -9,7 +9,7 @@ $dbname = getenv("SUB_REPOSITORY_DB_NAME") ?: "subt";
 $urlsite = getenv("SUB_REPOSITORY_SITE_URL") ?: "http://127.0.0.1/Sub-Repository/";
 $title = "Sub-Repository";
 $desciption = "Repositorio de Subtitulos Audiovisuales.";
-$version = "1.0.0";
+$version = "1.1.0";
 
 define("SUBTITLE_DIR", __DIR__ . DIRECTORY_SEPARATOR . "srt");
 define("SUBTITLE_PUBLIC_DIR", "srt");

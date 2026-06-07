@@ -2,7 +2,7 @@
 
 Repositorio simple de subtitulos hecho en PHP, MySQL/MariaDB y Materialize CSS.
 
-Version actual: `v1.0.0`
+Version actual: `v1.1.0`
 
 ## Requisitos
 
@@ -49,6 +49,7 @@ http://127.0.0.1/Sub-Repository/
 - `upload.php`: endpoint legado para incrementar el contador.
 - `srt/`: carpeta donde se guardan los subtitulos subidos.
 - `subt.sql`: esquema inicial de la base de datos.
+- Solicitudes: formulario publico sin login para registrar pedidos de subtitulos.
 
 ## Configuracion
 
@@ -70,6 +71,7 @@ La base se llama `subt` y contiene:
 
 - `upload`: subtitulos registrados.
 - `cont`: contador global de descargas.
+- `subtitle_requests`: solicitudes publicas de subtitulos.
 
 `subt.sql` crea la base, las tablas, las claves necesarias y la fila inicial del contador.
 

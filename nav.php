@@ -1,26 +1,32 @@
-<div>
-  <div class="row">
-    <div class="center-align">
-      <a href="<?php echo e(site_url()); ?>" style="color: white !important">
-        <h2 class="waves-effect" style="color: white; margin-top: -270px">
-          <b><img style="width: min(520px, 86vw); padding-bottom: 15px;" src="img/sub-repository-logo.png" alt="<?php echo e($title); ?>"></b>
-        </h2>
+<header class="site-header">
+  <div class="sr-container header-inner">
+    <a class="brand-link" href="<?php echo e(site_url()); ?>">
+      <span class="brand-mark"><i class="fa fa-code"></i></span>
+      <span><?php echo e($title); ?></span>
+    </a>
+
+    <div class="main-nav" role="navigation" aria-label="Principal">
+      <a class="<?php echo ($activePage ?? "") === "inicio" ? "is-active" : ""; ?>" href="<?php echo e(site_url("#inicio")); ?>">
+        <i class="fa fa-home"></i> Inicio
       </a>
-      <br>
-      <a href="." class="btn waves-effect waves-light green" style="color: white; margin-top: -130px">
-        <i class="fa fa-search"></i> Buscar
+      <a href="<?php echo e(site_url("#explorar")); ?>">
+        <i class="fa fa-link"></i> Explorar
       </a>
-      <a href="add.php" class="btn waves-effect waves-light red" style="color: white; margin-top: -130px">
-        <i class="fa fa-upload"></i> Subir Subtitulo
+      <a href="<?php echo e(site_url("#categorias")); ?>">
+        <i class="fa fa-th-large"></i> Categorias
+      </a>
+      <a href="<?php echo e(site_url("#solicitudes")); ?>">
+        <i class="fa fa-envelope-open-o"></i> Solicitudes
       </a>
     </div>
-    <div class="right-align">
-      <a class="tooltipped hoverable btn-floating btn waves-effect waves-light red"
-        data-position="left" data-delay="50"
-        data-tooltip="Subs Totales: <?php echo (int) $total_imagenes; ?> | Descargas: <?php echo (int) $c; ?>"
-        style="color: rgb(31, 144, 133); background-color: white !important; margin-top: -50px; margin-right:10px">
-        <i style="color: rgb(31, 144, 133)" class="fa fa-info red-text"></i>
+
+    <div class="header-actions">
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Cambiar tema">
+        <i class="fa fa-moon-o"></i>
+      </button>
+      <a class="primary-button" href="<?php echo e(site_url("add.php")); ?>">
+        <i class="fa fa-upload"></i> Subir subtitulo
       </a>
     </div>
   </div>
-</div>
+</header>
