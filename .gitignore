@@ -1,17 +1,33 @@
-*/config/development
-*/logs/log-*.php
-!*/logs/index.html
-*/cache/*
-!*/cache/index.html
-!*/cache/.htaccess
+# Local environment files
+.env
+.env.*
+!.env.example
 
-user_guide_src/build/*
-user_guide_src/cilexer/build/*
-user_guide_src/cilexer/dist/*
-user_guide_src/cilexer/pycilexer.egg-info/*
+# Uploaded subtitles and runtime data
+srt/*
+!srt/.htaccess
 
-#codeigniter 3
-application/logs/*
-!application/logs/index.html
-!application/logs/.htaccess
-/vendor/
+# Logs and temporary files
+*.log
+logs/
+tmp/
+temp/
+cache/
+
+# Dependency folders
+vendor/
+node_modules/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local backups
+*.bak
+*.backup
+*.orig
